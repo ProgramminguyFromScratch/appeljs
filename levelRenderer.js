@@ -61,6 +61,7 @@ class LevelRenderer {
         const loadImage = (src) => {
             return new Promise(resolve => {
                 const img = new Image();
+				img.crossOrigin = "anonymous";
                 img.onload = () => {
                     if (onProgress) onProgress();
                     resolve(img);
