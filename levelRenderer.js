@@ -91,6 +91,8 @@ class LevelRenderer {
         // Load Background
         await new Promise(resolve => {
             const img = new Image();
+			img.crossOrigin = "anonymous";   // ADD THIS
+
             img.onload = () => { 
                 this.background = img; 
                 if (onProgress) onProgress();
