@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appel</title>
+    <style>
+        body { 
+            margin: 0; 
+            background: #111; 
+            overflow: hidden; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: Arial, sans-serif;
+        }
+        canvas { 
+            background: #000; 
+            border: 2px solid #444; 
+        }
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+            background: rgba(0,0,0,0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+
+    <script src="profiler.js"></script>
+    <script src="touching.js"></script>
+    <script src="physics.js"></script>
+    <script src="levelRenderer.js"></script>
+    <script src="game.js"></script>
+
+    <script>
+        // Example usage with a level code
+        // Replace this with any level string from your source
+        const levelCode = "1235171196Z2Z394Z50Z2Z51Z2Z2Z190Z51Z1Z1Z6Z50Z1Z2Z2Z1Z186Z51Z1Z1Z2Z76Z1Z1Z3Z50Z1Z2Z2Z1Z186Z51Z1Z1Z2Z51Z1Z50Z1Z1Z2Z50Z1Z2Z7Z1Z181Z51Z1Z1Z1Z51Z1Z50Z1Z1Z5Z50Z1Z1Z1Z2Z1Z1Z2Z2Z1Z1Z183Z51Z1Z50Z1Z1Z5Z50Z1Z1Z1Z2Z1Z1Z2Z2Z1Z1Z187Z51Z1Z1Z2Z50Z1Z1Z1Z2Z1Z4Z2Z2Z1Z1Z187Z51Z1Z1Z1Z50Z1Z1Z1Z51Z1Z2Z4Z1Z187Z51Z1Z1Z3Z51Z1Z1Z195Z51Z1Z1Z195Z51Z1Z1Z3Z63Z1Z1Z191Z51Z1Z1Z1Z51Z4Z1Z35852ZZ1Z588Z2Z1Z1Z6Z0Z1Z1Z188Z2Z1Z1Z6Z0Z1Z1Z188Z2Z1Z1Z2Z3Z2Z1Z2Z0Z1Z1Z188Z2Z1Z1Z1Z0Z1Z2Z1Z1Z5Z0Z1Z1Z188Z0Z1Z2Z1Z1Z5Z0Z1Z1Z192Z2Z1Z1Z2Z0Z1Z1Z2Z3Z2Z1Z188Z2Z1Z1Z1Z3Z1Z1Z1Z0Z1Z1Z191Z2Z1Z1Z3Z0Z1Z1Z195Z0Z1Z1Z195Z0Z1Z1Z3Z3Z1Z1Z191Z0Z1Z1Z1Z3Z4Z1Z35852ZZZZ67Z1e585";
+        const replayCode = "12345908programminguyǇǇ12Ǉ52Ǉ1Ǉ1Ǉ13Ǉ9Ǉ17Ǉ11Ǉ18Ǉ10Ǉ22Ǉ2Ǉ26Ǉ10Ǉ28Ǉ11Ǉ29Ǉ9Ǉ30Ǉ1Ǉ36Ǉ0Ǉ41Ǉ2Ǉ50Ǉ10Ǉ60Ǉ2Ǉ64Ǉ9Ǉ65Ǉ1Ǉ82Ǉ3Ǉ83Ǉ2Ǉ89Ǉ10Ǉ91Ǉ11Ǉ92Ǉ9Ǉ94Ǉ1Ǉ100Ǉ3Ǉ102Ǉ9Ǉ107Ǉ1Ǉ110Ǉ3Ǉ111Ǉ11Ǉ112Ǉ9Ǉ116Ǉ1Ǉ121Ǉ3Ǉ123Ǉ11Ǉ124Ǉ9Ǉ127Ǉ1Ǉ132Ǉ3Ǉ134Ǉ11Ǉ135Ǉ9Ǉ137Ǉ1Ǉ144Ǉ0"
+        const game = new Game('gameCanvas');
+        game.init(levelCode);
+    </script>
+</body>
+</html>
