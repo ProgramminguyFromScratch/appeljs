@@ -4,7 +4,7 @@ class Touching {
         this.ready = false;
 
         // Store the promise so we can track it in Game.js
-        this.loadPromise = fetch('spikeHitboxes.json')
+        this.loadPromise = fetch('https://cdn.jsdelivr.net/gh/ProgramminguyFromScratch/appeljs/spikeHitboxes.json')
             .then(response => response.json())
             .then(data => {
                 this.spikes = {};
