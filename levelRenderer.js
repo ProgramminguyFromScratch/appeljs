@@ -297,13 +297,21 @@ class LevelRenderer {
 }
 
 
-function loadImage(src) {
-	return new Promise((resolve, reject) => {
-		const img = new Image();
-		img.crossOrigin = "anonymous";   // MUST be set before src
-		img.onload = () => resolve(img);
-		img.onerror = reject;
-		img.src = src;
-	});
-}
+const loadImage = (src) => {
+    return new Promise(resolve => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";   // ADD THIS
+        img.onload = () => {
+            if (onProgress) onProgress();
+            resolve(img);
+        };
+        img.onerror = () => {
+            console.warn(`Failed to load: ${src}`);
+            if (onProgress) onProgress();
+            resolve(null);
+        };
+        img.src = src;
+    });
+};
+
 
