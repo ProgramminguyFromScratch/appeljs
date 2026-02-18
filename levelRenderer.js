@@ -114,6 +114,16 @@ class LevelRenderer {
             .flatMap((c, i) => c === "1" ? [i] : []);
         this.assetsLoaded = true;
     }
+	function loadImage(src) {
+	    return new Promise((resolve, reject) => {
+	        const img = new Image();
+	        img.crossOrigin = "anonymous";   // MUST be set before src
+	        img.onload = () => resolve(img);
+	        img.onerror = reject;
+	        img.src = src;
+	    });
+	}
+
     
     renderPlayer(playerPos, camera) {
         if (!this.playerNormal || !this.playerCrouch) return;
