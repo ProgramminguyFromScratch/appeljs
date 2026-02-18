@@ -77,7 +77,7 @@ class LevelRenderer {
         // Load tiles 1-172
         const tilePromises = [];
         for (let i = 1; i <= 172; i++) {
-            tilePromises.push(loadImage(`tiles/${i}.svg`));
+            tilePromises.push(loadImage(`https://cdn.jsdelivr.net/gh/ProgramminguyFromScratch/appeljs/tiles/${i}.svg`));
         }
         
         // Wait for tiles, but we don't need to hold up the logic since we track progress
@@ -85,8 +85,8 @@ class LevelRenderer {
         this.tiles = await Promise.all(tilePromises);
 
         // Load Player Sprites
-        this.playerNormal = await loadImage('player_assets/stand.png');
-        this.playerCrouch = await loadImage('player_assets/crouch.png');
+        this.playerNormal = await loadImage('https://cdn.jsdelivr.net/gh/ProgramminguyFromScratch/appeljs/player_assets/stand.png');
+        this.playerCrouch = await loadImage('https://cdn.jsdelivr.net/gh/ProgramminguyFromScratch/appeljs/player_assets/crouch.png');
 
         // Load Background
         await new Promise(resolve => {
@@ -106,7 +106,7 @@ class LevelRenderer {
                 if (onProgress) onProgress();
                 resolve();
             };
-            img.src = 'bg.svg';
+            img.src = 'https://cdn.jsdelivr.net/gh/ProgramminguyFromScratch/appeljs/bg.svg';
         });
 
         this.visibleTiles = Array.from({length: 86}, (_, i) => i);
